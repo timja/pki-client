@@ -5,8 +5,12 @@ wrapper {
     gradleVersion = '3.0'
 }
 
+ext {
+    kotlin_version = '1.0.3'
+    bouncycastle_version = 1.54
+}
+
 buildscript {
-    ext.kotlin_version = '1.0.3'
 
     repositories {
         mavenCentral()
@@ -24,6 +28,12 @@ repositories {
 
 dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    // https://mvnrepository.com/artifact/org.bouncycastle/bcprov-jdk15on
+    compile group: 'org.bouncycastle', name: 'bcprov-jdk15on', version: $bouncycastle_version
+    // https://mvnrepository.com/artifact/org.bouncycastle/bcpkix-jdk15on
+    compile group: 'org.bouncycastle', name: 'bcpkix-jdk15on', version: $bouncycastle_version
+
+
 }
 group 'com.github.timja'
 version '0.0.1-SNAPSHOT'
