@@ -11,6 +11,8 @@ import {DashboardComponent} from "./dashboard.component";
 import {HeroDetailComponent} from "./hero-detail.component";
 import {HeroService} from "./hero.service";
 import {HeroSearchComponent} from "./hero-search.component";
+import {CertificateService} from "./certificate/certificate.service";
+
 
 // Imports for loading & configuring the in-memory web api
 
@@ -26,10 +28,11 @@ import {HeroSearchComponent} from "./hero-search.component";
     HeroesComponent,
     DashboardComponent,
     HeroDetailComponent,
-    HeroSearchComponent
+    HeroSearchComponent,
   ],
   providers: [
     HeroService,
+    CertificateService,
     {provide: XHRBackend, useClass: InMemoryBackendService}, // in-mem server
     {provide: SEED_DATA, useClass: InMemoryDataService}     // in-mem server data
   ],
